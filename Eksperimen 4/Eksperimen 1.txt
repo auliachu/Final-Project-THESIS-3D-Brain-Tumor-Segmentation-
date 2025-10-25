@@ -1,0 +1,1 @@
+Eksperimen 1 adalah melatih U-Net + AG+ Dropout dengan dataset BraTS 2020 saja. 

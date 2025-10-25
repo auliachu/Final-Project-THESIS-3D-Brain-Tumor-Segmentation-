@@ -1,0 +1,133 @@
+Menggunakan bobot kelas: [0.004483 0.391893 0.152227 0.45139 ]
+Model: "U-Net"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_22 (InputLayer)          [(None, 128, 128, 1  0           []                               
+                                28, 3)]                                                           
+                                                                                                  
+ conv3d_560 (Conv3D)            (None, 128, 128, 12  1312        ['input_22[0][0]']               
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_561 (Conv3D)            (None, 128, 128, 12  6928        ['conv3d_560[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_562 (Conv3D)            (None, 128, 128, 12  6928        ['conv3d_561[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ max_pooling3d_81 (MaxPooling3D  (None, 64, 64, 64,   0          ['conv3d_562[0][0]']             
+ )                              16)                                                               
+                                                                                                  
+ conv3d_563 (Conv3D)            (None, 64, 64, 64,   13856       ['max_pooling3d_81[0][0]']       
+                                32)                                                               
+                                                                                                  
+ conv3d_564 (Conv3D)            (None, 64, 64, 64,   27680       ['conv3d_563[0][0]']             
+                                32)                                                               
+                                                                                                  
+ conv3d_565 (Conv3D)            (None, 64, 64, 64,   27680       ['conv3d_564[0][0]']             
+                                32)                                                               
+                                                                                                  
+ max_pooling3d_82 (MaxPooling3D  (None, 32, 32, 32,   0          ['conv3d_565[0][0]']             
+ )                              32)                                                               
+                                                                                                  
+ conv3d_566 (Conv3D)            (None, 32, 32, 32,   55360       ['max_pooling3d_82[0][0]']       
+                                64)                                                               
+                                                                                                  
+ conv3d_567 (Conv3D)            (None, 32, 32, 32,   110656      ['conv3d_566[0][0]']             
+                                64)                                                               
+                                                                                                  
+ conv3d_568 (Conv3D)            (None, 32, 32, 32,   110656      ['conv3d_567[0][0]']             
+                                64)                                                               
+                                                                                                  
+ max_pooling3d_83 (MaxPooling3D  (None, 16, 16, 16,   0          ['conv3d_568[0][0]']             
+ )                              64)                                                               
+                                                                                                  
+ conv3d_569 (Conv3D)            (None, 16, 16, 16,   221312      ['max_pooling3d_83[0][0]']       
+                                128)                                                              
+                                                                                                  
+ conv3d_570 (Conv3D)            (None, 16, 16, 16,   442496      ['conv3d_569[0][0]']             
+                                128)                                                              
+                                                                                                  
+ conv3d_571 (Conv3D)            (None, 16, 16, 16,   442496      ['conv3d_570[0][0]']             
+                                128)                                                              
+                                                                                                  
+ max_pooling3d_84 (MaxPooling3D  (None, 8, 8, 8, 128  0          ['conv3d_571[0][0]']             
+ )                              )                                                                 
+                                                                                                  
+ conv3d_572 (Conv3D)            (None, 8, 8, 8, 256  884992      ['max_pooling3d_84[0][0]']       
+                                )                                                                 
+                                                                                                  
+ conv3d_573 (Conv3D)            (None, 8, 8, 8, 256  1769728     ['conv3d_572[0][0]']             
+                                )                                                                 
+                                                                                                  
+ conv3d_574 (Conv3D)            (None, 8, 8, 8, 256  1769728     ['conv3d_573[0][0]']             
+                                )                                                                 
+                                                                                                  
+ conv3d_transpose_56 (Conv3DTra  (None, 16, 16, 16,   262272     ['conv3d_574[0][0]']             
+ nspose)                        128)                                                              
+                                                                                                  
+ concatenate_76 (Concatenate)   (None, 16, 16, 16,   0           ['conv3d_transpose_56[0][0]',    
+                                256)                              'conv3d_571[0][0]']             
+                                                                                                  
+ conv3d_575 (Conv3D)            (None, 16, 16, 16,   884864      ['concatenate_76[0][0]']         
+                                128)                                                              
+                                                                                                  
+ conv3d_576 (Conv3D)            (None, 16, 16, 16,   442496      ['conv3d_575[0][0]']             
+                                128)                                                              
+                                                                                                  
+ conv3d_577 (Conv3D)            (None, 16, 16, 16,   442496      ['conv3d_576[0][0]']             
+                                128)                                                              
+                                                                                                  
+ conv3d_transpose_57 (Conv3DTra  (None, 32, 32, 32,   65600      ['conv3d_577[0][0]']             
+ nspose)                        64)                                                               
+                                                                                                  
+ concatenate_77 (Concatenate)   (None, 32, 32, 32,   0           ['conv3d_transpose_57[0][0]',    
+                                128)                              'conv3d_568[0][0]']             
+                                                                                                  
+ conv3d_578 (Conv3D)            (None, 32, 32, 32,   221248      ['concatenate_77[0][0]']         
+                                64)                                                               
+                                                                                                  
+ conv3d_579 (Conv3D)            (None, 32, 32, 32,   110656      ['conv3d_578[0][0]']             
+                                64)                                                               
+                                                                                                  
+ conv3d_580 (Conv3D)            (None, 32, 32, 32,   110656      ['conv3d_579[0][0]']             
+                                64)                                                               
+                                                                                                  
+ conv3d_transpose_58 (Conv3DTra  (None, 64, 64, 64,   16416      ['conv3d_580[0][0]']             
+ nspose)                        32)                                                               
+                                                                                                  
+ concatenate_78 (Concatenate)   (None, 64, 64, 64,   0           ['conv3d_transpose_58[0][0]',    
+                                64)                               'conv3d_565[0][0]']             
+                                                                                                  
+ conv3d_581 (Conv3D)            (None, 64, 64, 64,   55328       ['concatenate_78[0][0]']         
+                                32)                                                               
+                                                                                                  
+ conv3d_582 (Conv3D)            (None, 64, 64, 64,   27680       ['conv3d_581[0][0]']             
+                                32)                                                               
+                                                                                                  
+ conv3d_583 (Conv3D)            (None, 64, 64, 64,   27680       ['conv3d_582[0][0]']             
+                                32)                                                               
+                                                                                                  
+ conv3d_transpose_59 (Conv3DTra  (None, 128, 128, 12  4112       ['conv3d_583[0][0]']             
+ nspose)                        8, 16)                                                            
+                                                                                                  
+ concatenate_79 (Concatenate)   (None, 128, 128, 12  0           ['conv3d_transpose_59[0][0]',    
+                                8, 32)                            'conv3d_562[0][0]']             
+                                                                                                  
+ conv3d_584 (Conv3D)            (None, 128, 128, 12  13840       ['concatenate_79[0][0]']         
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_585 (Conv3D)            (None, 128, 128, 12  6928        ['conv3d_584[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_586 (Conv3D)            (None, 128, 128, 12  6928        ['conv3d_585[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_587 (Conv3D)            (None, 128, 128, 12  68          ['conv3d_586[0][0]']             
+                                8, 4)                                                             
+                                                                                                  
+==================================================================================================
+Total params: 8,591,076
+Trainable params: 8,591,076
+Non-trainable params: 0
+__________________________________________________________________________________________________

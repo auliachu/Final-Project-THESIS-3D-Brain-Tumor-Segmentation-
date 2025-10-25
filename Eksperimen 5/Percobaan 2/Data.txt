@@ -1,0 +1,4 @@
+Total data ditemukan: 1151
+Jumlah data training (70%): 805
+Jumlah data validasi (10%): 115
+Jumlah data testing (20%): 231

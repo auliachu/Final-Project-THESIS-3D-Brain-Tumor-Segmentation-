@@ -1,0 +1,317 @@
+Menggunakan bobot kelas: [0.004483 0.391893 0.152227 0.45139 ]
+Model: "Attention_UNet_3D_Custom"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_16 (InputLayer)          [(None, 128, 128, 1  0           []                               
+                                28, 3)]                                                           
+                                                                                                  
+ conv3d_387 (Conv3D)            (None, 128, 128, 12  1312        ['input_16[0][0]']               
+                                8, 16)                                                            
+                                                                                                  
+ activation_211 (Activation)    (None, 128, 128, 12  0           ['conv3d_387[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ dropout_114 (Dropout)          (None, 128, 128, 12  0           ['activation_211[0][0]']         
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_388 (Conv3D)            (None, 128, 128, 12  6928        ['dropout_114[0][0]']            
+                                8, 16)                                                            
+                                                                                                  
+ activation_212 (Activation)    (None, 128, 128, 12  0           ['conv3d_388[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ max_pooling3d_57 (MaxPooling3D  (None, 64, 64, 64,   0          ['activation_212[0][0]']         
+ )                              16)                                                               
+                                                                                                  
+ conv3d_389 (Conv3D)            (None, 64, 64, 64,   13856       ['max_pooling3d_57[0][0]']       
+                                32)                                                               
+                                                                                                  
+ activation_213 (Activation)    (None, 64, 64, 64,   0           ['conv3d_389[0][0]']             
+                                32)                                                               
+                                                                                                  
+ dropout_115 (Dropout)          (None, 64, 64, 64,   0           ['activation_213[0][0]']         
+                                32)                                                               
+                                                                                                  
+ conv3d_390 (Conv3D)            (None, 64, 64, 64,   27680       ['dropout_115[0][0]']            
+                                32)                                                               
+                                                                                                  
+ activation_214 (Activation)    (None, 64, 64, 64,   0           ['conv3d_390[0][0]']             
+                                32)                                                               
+                                                                                                  
+ max_pooling3d_58 (MaxPooling3D  (None, 32, 32, 32,   0          ['activation_214[0][0]']         
+ )                              32)                                                               
+                                                                                                  
+ conv3d_391 (Conv3D)            (None, 32, 32, 32,   55360       ['max_pooling3d_58[0][0]']       
+                                64)                                                               
+                                                                                                  
+ activation_215 (Activation)    (None, 32, 32, 32,   0           ['conv3d_391[0][0]']             
+                                64)                                                               
+                                                                                                  
+ dropout_116 (Dropout)          (None, 32, 32, 32,   0           ['activation_215[0][0]']         
+                                64)                                                               
+                                                                                                  
+ conv3d_392 (Conv3D)            (None, 32, 32, 32,   110656      ['dropout_116[0][0]']            
+                                64)                                                               
+                                                                                                  
+ activation_216 (Activation)    (None, 32, 32, 32,   0           ['conv3d_392[0][0]']             
+                                64)                                                               
+                                                                                                  
+ max_pooling3d_59 (MaxPooling3D  (None, 16, 16, 16,   0          ['activation_216[0][0]']         
+ )                              64)                                                               
+                                                                                                  
+ conv3d_393 (Conv3D)            (None, 16, 16, 16,   221312      ['max_pooling3d_59[0][0]']       
+                                128)                                                              
+                                                                                                  
+ activation_217 (Activation)    (None, 16, 16, 16,   0           ['conv3d_393[0][0]']             
+                                128)                                                              
+                                                                                                  
+ dropout_117 (Dropout)          (None, 16, 16, 16,   0           ['activation_217[0][0]']         
+                                128)                                                              
+                                                                                                  
+ conv3d_394 (Conv3D)            (None, 16, 16, 16,   442496      ['dropout_117[0][0]']            
+                                128)                                                              
+                                                                                                  
+ activation_218 (Activation)    (None, 16, 16, 16,   0           ['conv3d_394[0][0]']             
+                                128)                                                              
+                                                                                                  
+ max_pooling3d_60 (MaxPooling3D  (None, 8, 8, 8, 128  0          ['activation_218[0][0]']         
+ )                              )                                                                 
+                                                                                                  
+ conv3d_395 (Conv3D)            (None, 8, 8, 8, 256  884992      ['max_pooling3d_60[0][0]']       
+                                )                                                                 
+                                                                                                  
+ activation_219 (Activation)    (None, 8, 8, 8, 256  0           ['conv3d_395[0][0]']             
+                                )                                                                 
+                                                                                                  
+ dropout_118 (Dropout)          (None, 8, 8, 8, 256  0           ['activation_219[0][0]']         
+                                )                                                                 
+                                                                                                  
+ conv3d_396 (Conv3D)            (None, 8, 8, 8, 256  1769728     ['dropout_118[0][0]']            
+                                )                                                                 
+                                                                                                  
+ activation_220 (Activation)    (None, 8, 8, 8, 256  0           ['conv3d_396[0][0]']             
+                                )                                                                 
+                                                                                                  
+ conv3d_397 (Conv3D)            (None, 8, 8, 8, 128  32896       ['activation_220[0][0]']         
+                                )                                                                 
+                                                                                                  
+ batch_normalization_147 (Batch  (None, 8, 8, 8, 128  512        ['conv3d_397[0][0]']             
+ Normalization)                 )                                                                 
+                                                                                                  
+ activation_221 (Activation)    (None, 8, 8, 8, 128  0           ['batch_normalization_147[0][0]']
+                                )                                                                 
+                                                                                                  
+ conv3d_398 (Conv3D)            (None, 8, 8, 8, 128  131200      ['activation_218[0][0]']         
+                                )                                                                 
+                                                                                                  
+ conv3d_399 (Conv3D)            (None, 8, 8, 8, 128  16512       ['activation_221[0][0]']         
+                                )                                                                 
+                                                                                                  
+ add_46 (Add)                   (None, 8, 8, 8, 128  0           ['conv3d_398[0][0]',             
+                                )                                 'conv3d_399[0][0]']             
+                                                                                                  
+ activation_222 (Activation)    (None, 8, 8, 8, 128  0           ['add_46[0][0]']                 
+                                )                                                                 
+                                                                                                  
+ conv3d_400 (Conv3D)            (None, 8, 8, 8, 1)   129         ['activation_222[0][0]']         
+                                                                                                  
+ activation_223 (Activation)    (None, 8, 8, 8, 1)   0           ['conv3d_400[0][0]']             
+                                                                                                  
+ up_sampling3d_28 (UpSampling3D  (None, 16, 16, 16,   0          ['activation_223[0][0]']         
+ )                              1)                                                                
+                                                                                                  
+ conv3d_transpose_32 (Conv3DTra  (None, 16, 16, 16,   262272     ['activation_220[0][0]']         
+ nspose)                        128)                                                              
+                                                                                                  
+ multiply_28 (Multiply)         (None, 16, 16, 16,   0           ['activation_218[0][0]',         
+                                128)                              'up_sampling3d_28[0][0]']       
+                                                                                                  
+ concatenate_52 (Concatenate)   (None, 16, 16, 16,   0           ['conv3d_transpose_32[0][0]',    
+                                256)                              'multiply_28[0][0]']            
+                                                                                                  
+ conv3d_401 (Conv3D)            (None, 16, 16, 16,   884864      ['concatenate_52[0][0]']         
+                                128)                                                              
+                                                                                                  
+ activation_224 (Activation)    (None, 16, 16, 16,   0           ['conv3d_401[0][0]']             
+                                128)                                                              
+                                                                                                  
+ dropout_119 (Dropout)          (None, 16, 16, 16,   0           ['activation_224[0][0]']         
+                                128)                                                              
+                                                                                                  
+ conv3d_402 (Conv3D)            (None, 16, 16, 16,   442496      ['dropout_119[0][0]']            
+                                128)                                                              
+                                                                                                  
+ activation_225 (Activation)    (None, 16, 16, 16,   0           ['conv3d_402[0][0]']             
+                                128)                                                              
+                                                                                                  
+ conv3d_403 (Conv3D)            (None, 16, 16, 16,   8256        ['activation_225[0][0]']         
+                                64)                                                               
+                                                                                                  
+ batch_normalization_148 (Batch  (None, 16, 16, 16,   256        ['conv3d_403[0][0]']             
+ Normalization)                 64)                                                               
+                                                                                                  
+ activation_226 (Activation)    (None, 16, 16, 16,   0           ['batch_normalization_148[0][0]']
+                                64)                                                               
+                                                                                                  
+ conv3d_404 (Conv3D)            (None, 16, 16, 16,   32832       ['activation_216[0][0]']         
+                                64)                                                               
+                                                                                                  
+ conv3d_405 (Conv3D)            (None, 16, 16, 16,   4160        ['activation_226[0][0]']         
+                                64)                                                               
+                                                                                                  
+ add_47 (Add)                   (None, 16, 16, 16,   0           ['conv3d_404[0][0]',             
+                                64)                               'conv3d_405[0][0]']             
+                                                                                                  
+ activation_227 (Activation)    (None, 16, 16, 16,   0           ['add_47[0][0]']                 
+                                64)                                                               
+                                                                                                  
+ conv3d_406 (Conv3D)            (None, 16, 16, 16,   65          ['activation_227[0][0]']         
+                                1)                                                                
+                                                                                                  
+ activation_228 (Activation)    (None, 16, 16, 16,   0           ['conv3d_406[0][0]']             
+                                1)                                                                
+                                                                                                  
+ up_sampling3d_29 (UpSampling3D  (None, 32, 32, 32,   0          ['activation_228[0][0]']         
+ )                              1)                                                                
+                                                                                                  
+ conv3d_transpose_33 (Conv3DTra  (None, 32, 32, 32,   65600      ['activation_225[0][0]']         
+ nspose)                        64)                                                               
+                                                                                                  
+ multiply_29 (Multiply)         (None, 32, 32, 32,   0           ['activation_216[0][0]',         
+                                64)                               'up_sampling3d_29[0][0]']       
+                                                                                                  
+ concatenate_53 (Concatenate)   (None, 32, 32, 32,   0           ['conv3d_transpose_33[0][0]',    
+                                128)                              'multiply_29[0][0]']            
+                                                                                                  
+ conv3d_407 (Conv3D)            (None, 32, 32, 32,   221248      ['concatenate_53[0][0]']         
+                                64)                                                               
+                                                                                                  
+ activation_229 (Activation)    (None, 32, 32, 32,   0           ['conv3d_407[0][0]']             
+                                64)                                                               
+                                                                                                  
+ dropout_120 (Dropout)          (None, 32, 32, 32,   0           ['activation_229[0][0]']         
+                                64)                                                               
+                                                                                                  
+ conv3d_408 (Conv3D)            (None, 32, 32, 32,   110656      ['dropout_120[0][0]']            
+                                64)                                                               
+                                                                                                  
+ activation_230 (Activation)    (None, 32, 32, 32,   0           ['conv3d_408[0][0]']             
+                                64)                                                               
+                                                                                                  
+ conv3d_409 (Conv3D)            (None, 32, 32, 32,   2080        ['activation_230[0][0]']         
+                                32)                                                               
+                                                                                                  
+ batch_normalization_149 (Batch  (None, 32, 32, 32,   128        ['conv3d_409[0][0]']             
+ Normalization)                 32)                                                               
+                                                                                                  
+ activation_231 (Activation)    (None, 32, 32, 32,   0           ['batch_normalization_149[0][0]']
+                                32)                                                               
+                                                                                                  
+ conv3d_410 (Conv3D)            (None, 32, 32, 32,   8224        ['activation_214[0][0]']         
+                                32)                                                               
+                                                                                                  
+ conv3d_411 (Conv3D)            (None, 32, 32, 32,   1056        ['activation_231[0][0]']         
+                                32)                                                               
+                                                                                                  
+ add_48 (Add)                   (None, 32, 32, 32,   0           ['conv3d_410[0][0]',             
+                                32)                               'conv3d_411[0][0]']             
+                                                                                                  
+ activation_232 (Activation)    (None, 32, 32, 32,   0           ['add_48[0][0]']                 
+                                32)                                                               
+                                                                                                  
+ conv3d_412 (Conv3D)            (None, 32, 32, 32,   33          ['activation_232[0][0]']         
+                                1)                                                                
+                                                                                                  
+ activation_233 (Activation)    (None, 32, 32, 32,   0           ['conv3d_412[0][0]']             
+                                1)                                                                
+                                                                                                  
+ up_sampling3d_30 (UpSampling3D  (None, 64, 64, 64,   0          ['activation_233[0][0]']         
+ )                              1)                                                                
+                                                                                                  
+ conv3d_transpose_34 (Conv3DTra  (None, 64, 64, 64,   16416      ['activation_230[0][0]']         
+ nspose)                        32)                                                               
+                                                                                                  
+ multiply_30 (Multiply)         (None, 64, 64, 64,   0           ['activation_214[0][0]',         
+                                32)                               'up_sampling3d_30[0][0]']       
+                                                                                                  
+ concatenate_54 (Concatenate)   (None, 64, 64, 64,   0           ['conv3d_transpose_34[0][0]',    
+                                64)                               'multiply_30[0][0]']            
+                                                                                                  
+ conv3d_413 (Conv3D)            (None, 64, 64, 64,   55328       ['concatenate_54[0][0]']         
+                                32)                                                               
+                                                                                                  
+ activation_234 (Activation)    (None, 64, 64, 64,   0           ['conv3d_413[0][0]']             
+                                32)                                                               
+                                                                                                  
+ dropout_121 (Dropout)          (None, 64, 64, 64,   0           ['activation_234[0][0]']         
+                                32)                                                               
+                                                                                                  
+ conv3d_414 (Conv3D)            (None, 64, 64, 64,   27680       ['dropout_121[0][0]']            
+                                32)                                                               
+                                                                                                  
+ activation_235 (Activation)    (None, 64, 64, 64,   0           ['conv3d_414[0][0]']             
+                                32)                                                               
+                                                                                                  
+ conv3d_415 (Conv3D)            (None, 64, 64, 64,   528         ['activation_235[0][0]']         
+                                16)                                                               
+                                                                                                  
+ batch_normalization_150 (Batch  (None, 64, 64, 64,   64         ['conv3d_415[0][0]']             
+ Normalization)                 16)                                                               
+                                                                                                  
+ activation_236 (Activation)    (None, 64, 64, 64,   0           ['batch_normalization_150[0][0]']
+                                16)                                                               
+                                                                                                  
+ conv3d_416 (Conv3D)            (None, 64, 64, 64,   2064        ['activation_212[0][0]']         
+                                16)                                                               
+                                                                                                  
+ conv3d_417 (Conv3D)            (None, 64, 64, 64,   272         ['activation_236[0][0]']         
+                                16)                                                               
+                                                                                                  
+ add_49 (Add)                   (None, 64, 64, 64,   0           ['conv3d_416[0][0]',             
+                                16)                               'conv3d_417[0][0]']             
+                                                                                                  
+ activation_237 (Activation)    (None, 64, 64, 64,   0           ['add_49[0][0]']                 
+                                16)                                                               
+                                                                                                  
+ conv3d_418 (Conv3D)            (None, 64, 64, 64,   17          ['activation_237[0][0]']         
+                                1)                                                                
+                                                                                                  
+ activation_238 (Activation)    (None, 64, 64, 64,   0           ['conv3d_418[0][0]']             
+                                1)                                                                
+                                                                                                  
+ up_sampling3d_31 (UpSampling3D  (None, 128, 128, 12  0          ['activation_238[0][0]']         
+ )                              8, 1)                                                             
+                                                                                                  
+ conv3d_transpose_35 (Conv3DTra  (None, 128, 128, 12  4112       ['activation_235[0][0]']         
+ nspose)                        8, 16)                                                            
+                                                                                                  
+ multiply_31 (Multiply)         (None, 128, 128, 12  0           ['activation_212[0][0]',         
+                                8, 16)                            'up_sampling3d_31[0][0]']       
+                                                                                                  
+ concatenate_55 (Concatenate)   (None, 128, 128, 12  0           ['conv3d_transpose_35[0][0]',    
+                                8, 32)                            'multiply_31[0][0]']            
+                                                                                                  
+ conv3d_419 (Conv3D)            (None, 128, 128, 12  13840       ['concatenate_55[0][0]']         
+                                8, 16)                                                            
+                                                                                                  
+ activation_239 (Activation)    (None, 128, 128, 12  0           ['conv3d_419[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ dropout_122 (Dropout)          (None, 128, 128, 12  0           ['activation_239[0][0]']         
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_420 (Conv3D)            (None, 128, 128, 12  6928        ['dropout_122[0][0]']            
+                                8, 16)                                                            
+                                                                                                  
+ activation_240 (Activation)    (None, 128, 128, 12  0           ['conv3d_420[0][0]']             
+                                8, 16)                                                            
+                                                                                                  
+ conv3d_421 (Conv3D)            (None, 128, 128, 12  68          ['activation_240[0][0]']         
+                                8, 4)                                                             
+                                                                                                  
+==================================================================================================
+Total params: 5,887,112
+Trainable params: 5,886,632
+Non-trainable params: 480
+__________________________________________________________________________________________________

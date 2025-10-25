@@ -1,0 +1,34 @@
+--- Memulai Evaluasi Model pada Seluruh Data Validasi ---
+Mengevaluasi data validasi: 100%|██████████| 115/115 [01:04<00:00,  1.79it/s]
+
+===========================================================
+--- HASIL EVALUASI RATA-RATA PADA SELURUH DATA VALIDASI ---
+===========================================================
+
+Evaluasi Dice Score Rata-rata per Kelas:
+  - Kelas 0 (Background) — Rata-rata Dice: 0.9859
+  - Kelas 1 (Necrotic and non-enhancing tumor core (NCR/NET)) — Rata-rata Dice: 0.6999
+  - Kelas 2 (Peritumoral edema (ED)) — Rata-rata Dice: 0.6815
+  - Kelas 3 (enhancing tumor (ET)) — Rata-rata Dice: 0.7799
+
+Evaluasi IoU Score Rata-rata per Kelas:
+  - Kelas 0 (Background) — Rata-rata IoU: 0.9738
+  - Kelas 1 (Necrotic and non-enhancing tumor core (NCR/NET)) — Rata-rata IoU: 0.6061
+  - Kelas 2 (Peritumoral edema (ED)) — Rata-rata IoU: 0.5538
+  - Kelas 3 (enhancing tumor (ET)) — Rata-rata IoU: 0.6849
+
+-----------------------------------------------------------
+Mean IoU (mIoU) Seluruh Kelas: 0.7047
+Rata-rata Dice Score Tertimbang (Kelas 1,2,3): 0.7333
+-----------------------------------------------------------
+
+Evaluasi Kinerja Rata-rata per Region (Standar BraTS):
+  - Whole Tumor (WT)      — Rata-rata Dice: 0.8196
+  - Tumor Core (TC)       — Rata-rata Dice: 0.8275
+  - Enhancing Tumor (ET)  — Rata-rata Dice: 0.7799
+===========================================================
+
+  - Whole Tumor (WT)      — Rata-rata IoU : 0.7193
+  - Tumor Core (TC)       — Rata-rata IoU : 0.7600
+  - Enhancing Tumor (ET)  — Rata-rata IoU : 0.6849
+===========================================================

@@ -1,0 +1,31 @@
+--- Menganalisis Rata-rata untuk 343 Gambar Gabungan ---
+Processing All Masks: 100%|██████████| 343/343 [00:57<00:00,  5.99it/s]
+(4,)
+
+--- Hasil Rata-rata Persebaran Kelas ---
+Rata-rata Jumlah Voxel per Kelas di Seluruh Dataset:
+  - Kelas 0: 1,995,743.51 voxel
+  - Kelas 1: 22,825.83 voxel
+  - Kelas 2: 58,766.03 voxel
+  - Kelas 3: 19,816.63 voxel
+
+--- Menghitung Bobot Kelas dari 343 Gambar ---
+Calculating Weights: 100%|██████████| 343/343 [00:27<00:00, 12.70it/s]
+--- Hasil Akumulasi Voxel Per Kelas ---
+  - Kelas 0: 684,540,023 voxel
+  - Kelas 1: 7,829,260 voxel
+  - Kelas 2: 20,156,750 voxel
+  - Kelas 3: 6,797,103 voxel
+
+--- Bobot Awal (Pre-Normalisasi) ---
+[  1.05081128  91.86782063  35.68519066 105.81670156]
+
+--- Bobot Kelas untuk Weighted Loss (Rentang 0-1) ---
+Bobot yang dihitung (jumlah total = 1):
+  - Bobot Kelas 0: 0.004483
+  - Bobot Kelas 1: 0.391893
+  - Bobot Kelas 2: 0.152227
+  - Bobot Kelas 3: 0.451397
+
+Array bobot untuk disalin:
+[0.004483 0.391893 0.152227 0.451397]

@@ -1,0 +1,27 @@
+--- Memulai Evaluasi Model pada Seluruh Data Training ---
+Mengevaluasi data training: 100%|██████████| 805/805 [09:44<00:00,  1.38it/s]
+
+===========================================================
+--- HASIL EVALUASI RATA-RATA PADA SELURUH DATA TRAINING ---
+===========================================================
+
+Evaluasi Dice Score Rata-rata per Kelas (Training):
+  - Kelas 0 (Background) — Rata-rata Dice: 0.9856
+  - Kelas 1 (Necrotic and non-enhancing tumor core (NCR/NET)) — Rata-rata Dice: 0.7458
+  - Kelas 2 (Peritumoral edema (ED)) — Rata-rata Dice: 0.6808
+  - Kelas 3 (enhancing tumor (ET)) — Rata-rata Dice: 0.8150
+
+Evaluasi IoU Score Rata-rata per Kelas (Training):
+  - Kelas 0 (Background) — Rata-rata IoU: 0.9729
+  - Kelas 1 (Necrotic and non-enhancing tumor core (NCR/NET)) — Rata-rata IoU: 0.6537
+  - Kelas 2 (Peritumoral edema (ED)) — Rata-rata IoU: 0.5540
+  - Kelas 3 (enhancing tumor (ET)) — Rata-rata IoU: 0.7211
+
+Evaluasi Kinerja Rata-rata per Region (Training):
+  - Whole Tumor (WT)      — Rata-rata Dice: 0.7995
+  - Tumor Core (TC)       — Rata-rata Dice: 0.8686
+  - Enhancing Tumor (ET)  — Rata-rata Dice: 0.8150
+  - Whole Tumor (WT)      — Rata-rata IoU : 0.6947
+  - Tumor Core (TC)       — Rata-rata IoU : 0.8039
+  - Enhancing Tumor (ET)  — Rata-rata IoU : 0.7211
+===========================================================
